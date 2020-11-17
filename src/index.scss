@@ -1,0 +1,25 @@
+/*!
+ *  Fountain | MIT License
+ *
+ *  A minimalist front-end design toolkit for developing responsive,
+ *  browser-consistent web apps.
+ *
+ *  Author: Brian Kemboi
+ *  Source: https://github.com/BrianKemboi/fountain
+ */
+
+//==============================================================================
+// Configuration
+//==============================================================================
+@import 'base/variables';
+
+//==============================================================================
+// Reset
+//==============================================================================
+@import 'base/normalize';
+@import 'base/reset';
+
+//==============================================================================
+// Components
+//==============================================================================
+@import 'components/staging';
