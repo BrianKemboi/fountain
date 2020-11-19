@@ -8,14 +8,14 @@ $secondaryColor: #03dac6 !default;
 $secondaryColorVariant: #018786 !default;
 
 $backgroundColor: #FFFFFF !default;
-$surfaceColor: #FFFFFF !default;
+$surfaceColor: $backgroundColor !default;
 $errorColor: #B00020 !default;
 $successColor: #66bb6a !default;
 
 $onPrimaryColor: #FFFFFF !default;
 $onSecondaryColor: #000000 !default;
 $onBackgroundColor: #000000 !default;
-$onSurfaceColor: #000000 !default;
+$onSurfaceColor: $onBackgroundColor !default;
 $onErrorColor: #FFFFFF !default;
 
 //==============================================================================
@@ -32,6 +32,21 @@ $large: 1200px !default;
 $mobile: $x-small !default;
 $tablet: $small !default;
 $desktop: $medium !default;
+
+//==============================================================================
+// Spacing
+//==============================================================================
+$xSmallPadding: 0.25rem;
+$smallPadding: 0.5rem;
+$mediumPadding: 1rem;
+$largePadding: 2rem;
+$xLargePadding: 4rem;
+
+$xSmallMargin: $xSmallPadding;
+$smallMargin: $smallPadding;
+$mediumMargin: $mediumPadding;
+$largeMargin: $largePadding;
+$xLargeMargin: $xLargePadding;
 
 //==============================================================================
 // Typography
