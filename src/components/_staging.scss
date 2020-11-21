@@ -76,3 +76,28 @@ h6 {
     font-size: 20;
     letter-spacing: 0.15px;
 }
+
+//==============================================================================
+// Formatting
+//==============================================================================
+
+blockquote {
+    padding: 0 $mediumPadding;
+    border-left: $xSmallPadding solid $secondaryColor;
+    
+    cite {
+        display: block;
+        text-align: right;
+    }
+}
+
+mark {
+    background: $secondaryColor;
+    padding: 0 $xSmallPadding;
+}
+
+pre {
+    display: block;
+    font-family: monospace;
+    margin: $mediumMargin 0;
+}
