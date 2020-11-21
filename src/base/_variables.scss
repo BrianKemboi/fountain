@@ -36,11 +36,11 @@ $desktop: $medium !default;
 //==============================================================================
 // Spacing
 //==============================================================================
-$xSmallPadding: 0.25rem;
-$smallPadding: 0.5rem;
-$mediumPadding: 1rem;
-$largePadding: 2rem;
-$xLargePadding: 4rem;
+$xSmallPadding: 0.25rem;  // 4px
+$smallPadding: 0.5rem;    // 8px
+$mediumPadding: 1rem;     // 16px
+$largePadding: 2rem;      // 32px
+$xLargePadding: 4rem;     // 64px
 
 $xSmallMargin: $xSmallPadding;
 $smallMargin: $smallPadding;
