@@ -4,6 +4,7 @@
   "description": "A minimalist front-end design toolkit",
   "main": "index.js",
   "scripts": {
+    "sass:watch": "node-sass src/ -o dist/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
