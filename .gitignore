@@ -1,6 +1,6 @@
 # Ignore Node Modules
 node_modules
-
+dist
 # Sass Cache
 .sass-cache
 .DS_Store
