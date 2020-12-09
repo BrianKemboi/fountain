@@ -17,5 +17,26 @@ $mediumGutter: $mediumMargin;
 $largeGutter: $largeMargin;
 
 .grid {
-    display: grid;
+  display: grid;
+}
+
+/*
+ *  Mobile Breakpoint
+ *  4 Columns
+ */
+@include small-breakpoint {
+}
+
+/*
+ *  Tablet Breakpoint
+ *  8 Columns
+ */
+@include medium-breakpoint {
+}
+
+/* 
+ *  Desktop Breakpoint
+ *  12 Columns
+ */
+@include large-breakpoint {
 }
