@@ -1,12 +1,21 @@
-/* Grid: Grid System
- *
- *  12 Column Grid System
+/* Grid: 12 Column Grid System
  *
  *  3 Breakpoints
- *    - Mobile    : 4 Columns
- *    - Tablet    : 8 Columns
- *    - Desktop   : 12 Columns
+ *    - Mobile    : 4 Columns   // 0px - 600px
+ *    - Tablet    : 8 Columns   // 600px - 840px
+ *    - Desktop   : 12 Columns  // > 840px
  *
  */
 
- 
+//  Margins and Gutters
+$smallMargin: 8px;
+$mediumMargin: 16px;
+$largeMargin: 24px;
+
+$smallGutter: $smallMargin;
+$mediumGutter: $mediumMargin;
+$largeGutter: $largeMargin;
+
+.grid {
+    display: grid;
+}
