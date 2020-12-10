@@ -1,11 +1,14 @@
 /* Grid: 12 Column Grid System
  *
- *  3 Breakpoints
- *    - Mobile    : 4 Columns   // 0px - 600px
- *    - Tablet    : 8 Columns   // 600px - 840px
- *    - Desktop   : 12 Columns  // > 840px
+ * 3 Breakpoints
+ *   - Mobile    : 4 Columns   // 0px - 600px
+ *   - Tablet    : 8 Columns   // 600px - 840px
+ *   - Desktop   : 12 Columns  // > 840px
  *
  */
+
+//  Columns
+$columns: 13;
 
 //  Margins and Gutters
 $smallMargin: 8px;
@@ -18,6 +21,23 @@ $largeGutter: $largeMargin;
 
 .grid {
   display: grid;
+
+  @for $i from 1 to $columns {
+    .col#{$i} {
+      $span: $columns - $i;
+      @while $span > 1 {
+        &-span#{$span} {
+          grid-column: $i / span $span;
+        }
+        $span: $span - 1;
+      }
+    }
+  }
+
+  // Full Row
+  .col-all {
+    grid-column: 1 / -1;
+  }
 }
 
 /*
@@ -25,6 +45,12 @@ $largeGutter: $largeMargin;
  *  4 Columns
  */
 @include small-breakpoint {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: $smallGutter;
+    grid-gap: $smallGutter;
+    margin: 0 $smallMargin;
+  }
 }
 
 /*
@@ -32,6 +58,12 @@ $largeGutter: $largeMargin;
  *  8 Columns
  */
 @include medium-breakpoint {
+  .grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: $mediumGutter;
+    grid-gap: $mediumGutter;
+    margin: 0 $mediumMargin;
+  }
 }
 
 /* 
@@ -39,4 +71,10 @@ $largeGutter: $largeMargin;
  *  12 Columns
  */
 @include large-breakpoint {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: $largeGutter;
+    grid-gap: $largeGutter;
+    margin: 0 %$largeMargin;
+  }
 }
