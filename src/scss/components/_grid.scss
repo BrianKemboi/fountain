@@ -8,7 +8,7 @@
  */
 
 //  Columns
-$columns: 13;
+$columns: 12;
 
 //  Margins and Gutters
 $smallMargin: 8px;
@@ -21,23 +21,26 @@ $largeGutter: $largeMargin;
 
 .grid {
   display: grid;
+}
 
-  @for $i from 1 to $columns {
-    .col#{$i} {
-      $span: $columns - $i;
-      @while $span > 1 {
-        &-span#{$span} {
-          grid-column: $i / span $span;
-        }
-        $span: $span - 1;
-      }
-    }
+@for $i from 2 through $columns {
+  .span#{$i} {
+    grid-column: span $i;
   }
+  // .col#{$i} {
+  //   $span: $columns - $i;
+  //   @while $span > 1 {
+  //     &-span#{$span} {
+  //       grid-column: $i / span $span;
+  //     }
+  //     $span: $span - 1;
+  //   }
+  // }
+}
 
-  // Full Row
-  .col-all {
-    grid-column: 1 / -1;
-  }
+// Full Row
+.span-all {
+  grid-column: 1 / -1;
 }
 
 /*
