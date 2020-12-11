@@ -75,6 +75,6 @@ $largeGutter: $largeMargin;
     grid-template-columns: repeat(12, 1fr);
     gap: $largeGutter;
     grid-gap: $largeGutter;
-    margin: 0 %$largeMargin;
+    margin: 0 $largeMargin;
   }
 }
