@@ -1,3 +1,26 @@
 /* 
  *  Buttons Styling
+ *
+ *  3 Types:
+ *      1. Contained
+ *      2. Outlined
+ *      3. Text
+ *   
+ *  Optional: Icon
  */
+
+ $buttons: ('.button, a.button, button, [type=submit], [type=reset], [type=button]') !default;
+
+// Main Styling
+ %buttons {
+     -webkit-appearance: none;
+     display: inline-flex;
+     min-width: 64px;
+     font-weight: 500;
+     font-size: 0.875em;
+     letter-spacing: 1.25px;
+     text-transform: uppercase;
+     justify-content: center;
+     text-align: center;
+     padding: 1rem 0;
+ }
