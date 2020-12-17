@@ -1,14 +1,11 @@
 /* Grid: 12 Column Grid System
  *
  * 3 Breakpoints
- *   - Mobile    : 4 Columns   // 0px - 600px
- *   - Tablet    : 8 Columns   // 600px - 840px
- *   - Desktop   : 12 Columns  // > 840px
+ *   - Mobile    : 4 Columns
+ *   - Tablet    : 8 Columns
+ *   - Desktop   : 12 Columns
  *
  */
-
-//  Columns
-$columns: 12;
 
 //  Margins and Gutters
 $smallMargin: 8px;
@@ -19,28 +16,34 @@ $smallGutter: $smallMargin;
 $mediumGutter: $mediumMargin;
 $largeGutter: $largeMargin;
 
+@mixin mobile-breakpoint {
+  @for $i from 2 through 4 {
+    .span#{$i} {
+      grid-column: span $i;
+    }
+  }
+}
+
+@mixin tablet-breakpoint {
+  @include mobile-breakpoint;
+  @for $i from 5 through 8 {
+    .span#{$i} {
+      grid-column: span $i;
+    }
+  }
+}
+
+@mixin desktop-breakpoint {
+  @include tablet-breakpoint;
+  @for $i from 9 through 12 {
+    .span#{$i} {
+      grid-column: span $i;
+    }
+  }
+}
+
 .grid {
   display: grid;
-}
-
-@for $i from 2 through $columns {
-  .span#{$i} {
-    grid-column: span $i;
-  }
-  // .col#{$i} {
-  //   $span: $columns - $i;
-  //   @while $span > 1 {
-  //     &-span#{$span} {
-  //       grid-column: $i / span $span;
-  //     }
-  //     $span: $span - 1;
-  //   }
-  // }
-}
-
-// Full Row
-.span-all {
-  grid-column: 1 / -1;
 }
 
 /*
@@ -53,6 +56,19 @@ $largeGutter: $largeMargin;
     gap: $smallGutter;
     grid-gap: $smallGutter;
     margin: 0 $smallMargin;
+    @include mobile-breakpoint;
+    .span-fourth {
+      grid-column: span 1;
+    }
+    .span-half {
+      grid-column: span 2;
+    }
+    .span-three-fourths {
+      grid-column: span 3;
+    }
+    .span-all {
+      grid-column: span 4;
+    }
   }
 }
 
@@ -66,6 +82,19 @@ $largeGutter: $largeMargin;
     gap: $mediumGutter;
     grid-gap: $mediumGutter;
     margin: 0 $mediumMargin;
+    @include tablet-breakpoint;
+    .span-fourth {
+      grid-column: span 2;
+    }
+    .span-half {
+      grid-column: span 4;
+    }
+    .span-three-fourths {
+      grid-column: span 6;
+    }
+    .span-all {
+      grid-column: span 8;
+    }
   }
 }
 
@@ -79,5 +108,18 @@ $largeGutter: $largeMargin;
     gap: $largeGutter;
     grid-gap: $largeGutter;
     margin: 0 $largeMargin;
+    @include desktop-breakpoint;
+    .span-fourth {
+      grid-column: span 3;
+    }
+    .span-half {
+      grid-column: span 6;
+    }
+    .span-three-fourths {
+      grid-column: span 9;
+    }
+    .span-all {
+      grid-column: span 12;
+    }
   }
 }
